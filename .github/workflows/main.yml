@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       repo_url:
-        description: 'Репозиторий в формате owner/repo'
+        description: 'Repository in owner/repo format'
         required: true
         type: string
 
@@ -41,7 +41,7 @@ jobs:
 
       - name: Find and collect APKs
         run: |
-          echo "Поиск APK-файлов..."
+          echo "Searching for APK files..."
           find . -name "*.apk" -type f
           mkdir -p apk-output
           find . -name "*.apk" -type f -exec cp {} apk-output/ \;
