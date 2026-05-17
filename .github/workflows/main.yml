@@ -1,3 +1,4 @@
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties'      -
 name: Build APK from external repo
 
 on:
@@ -39,7 +40,7 @@ jobs:
       - name: Build debug APK
         run: ./gradlew assembleDebug
 
-      - name: Find and upload APK
+      - name: Find and collect APKs
         run: |
           echo "Поиск APK-файлов..."
           find . -name "*.apk" -type f
